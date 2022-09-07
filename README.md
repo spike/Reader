@@ -1,7 +1,7 @@
 
 ### Description
 
-This project is my first attempt at implementing a Driiible [mockup](https://dribbble.com/shots/18526342-Mobile-App-iOS-Android-UI) using [Jetpack Compose](https://developer.android.com/jetpack/compose). I didn't copy their assets or fonts, but I did my best to reproduce their layout. 
+This Android project is my first attempt at implementing a Driiible [mockup](https://dribbble.com/shots/18526342-Mobile-App-iOS-Android-UI) using [Jetpack Compose](https://developer.android.com/jetpack/compose). I didn't copy their assets or fonts, but I did my best to reproduce their layout. 
 
 ### Credit
 
