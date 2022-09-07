@@ -166,9 +166,11 @@ fun SmartPicker() {
         .padding(start = 26.dp, top = 30.dp, bottom = 8.dp)
     ){
         Column() {
-            Text(text="Shelf is all about your reading.",
+            Text(text="Let our AI select a book",
                 style= MaterialTheme.typography.body1)
-            Text(text="Try and enjoy.",
+            Text(text="for you based on your",
+                style= MaterialTheme.typography.body1)
+            Text(text="interests.",
                 style= MaterialTheme.typography.body1)
         }
         Column(modifier = Modifier.padding(
