@@ -49,52 +49,65 @@ class MainActivity : ComponentActivity() {
 fun SummaryStats() {
         Row(
             modifier = Modifier.padding(
-                top = 32.dp,
+                top = 8.dp,
             ).height(Min),
             horizontalArrangement = Arrangement.SpaceEvenly
-
         ) {
             Spacer(modifier = Modifier.weight(.5f))
-            Column(
-                modifier = Modifier.weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "996",
-                    style = MaterialTheme.typography.h4,
-                )
-                Text(
-                    text = "Hours",
-                    style = MaterialTheme.typography.body1,
-                )
+            Card(elevation = 2.dp,
+                modifier = Modifier.weight(3f),
 
-            }
+            ) {
+                Row(
+                    modifier = Modifier.padding(
+                        top = 20.dp,
+                        bottom = 20.dp
+                    ).height(Min),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Column(
+                        modifier = Modifier.weight(1f),
+                        horizontalAlignment = Alignment.CenterHorizontally,
 
-            Column(
-                modifier = Modifier.weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "207",
-                    style = MaterialTheme.typography.h4,
-                )
-                Text(
-                    text = "Books",
-                    style = MaterialTheme.typography.body1,
-                )
-            }
-            Column(
-                modifier = Modifier.weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "104",
-                    style = MaterialTheme.typography.h4,
-                )
-                Text(
-                    text = "Authors",
-                    style = MaterialTheme.typography.body1,
-                )
+                        ) {
+                        Text(
+                            text = "996",
+                            style = MaterialTheme.typography.h4,
+                        )
+                        Text(
+                            text = "Hours",
+                            style = MaterialTheme.typography.body1,
+                        )
+
+                    }
+
+                    Column(
+                        modifier = Modifier.weight(1f),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "207",
+                            style = MaterialTheme.typography.h4,
+                        )
+                        Text(
+                            text = "Books",
+                            style = MaterialTheme.typography.body1,
+                        )
+                    }
+                    Column(
+                        modifier = Modifier.weight(1f),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "104",
+                            style = MaterialTheme.typography.h4,
+                        )
+                        Text(
+                            text = "Authors",
+                            style = MaterialTheme.typography.body1,
+                        )
+                    }
+                }
             }
             Spacer(modifier = Modifier.weight(.5f))
         }
