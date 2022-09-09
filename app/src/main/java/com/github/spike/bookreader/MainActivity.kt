@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.IntrinsicSize.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -48,66 +49,54 @@ class MainActivity : ComponentActivity() {
 fun SummaryStats() {
         Row(
             modifier = Modifier.padding(
-                top = 20.dp
-        )) {
-            Column() {
+                top = 32.dp,
+            ).height(Min),
+            horizontalArrangement = Arrangement.SpaceEvenly
+
+        ) {
+            Spacer(modifier = Modifier.weight(.5f))
+            Column(
+                modifier = Modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Text(
-                    text = "3996",
+                    text = "996",
                     style = MaterialTheme.typography.h4,
-                    modifier = Modifier.padding(
-                        end = 16.dp,
-                        top = 4.dp
-                    ),
                 )
                 Text(
                     text = "Hours",
                     style = MaterialTheme.typography.body1,
-                    modifier = Modifier.padding(
-                        end = 16.dp,
-                        top = 4.dp
-                    ),
                 )
 
             }
 
-            Column() {
+            Column(
+                modifier = Modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Text(
                     text = "207",
                     style = MaterialTheme.typography.h4,
-                    modifier = Modifier.padding(
-                        start = 8.dp,
-                        end = 16.dp,
-                        top = 4.dp
-                    ),
                 )
                 Text(
                     text = "Books",
                     style = MaterialTheme.typography.body1,
-                    modifier = Modifier.padding(
-                        start = 8.dp,
-                        end = 16.dp,
-                        top = 4.dp
-                    ),
                 )
             }
-            Column() {
+            Column(
+                modifier = Modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Text(
                     text = "104",
                     style = MaterialTheme.typography.h4,
-                    modifier = Modifier.padding(
-                        start = 8.dp,
-                        top = 4.dp
-                    ),
                 )
                 Text(
                     text = "Authors",
                     style = MaterialTheme.typography.body1,
-                    modifier = Modifier.padding(
-                        start = 8.dp,
-                        top = 4.dp
-                    ),
                 )
             }
+            Spacer(modifier = Modifier.weight(.5f))
         }
 
     }
@@ -198,7 +187,7 @@ fun BookList() {
                     bottom = 8.dp),
             )
         }
-        items(2) { index ->
+        items(20) { index ->
             Row(
                 modifier = Modifier
                     .padding(
@@ -283,7 +272,6 @@ fun BottomNavigationBar() {
                 unselectedContentColor = Color.Black.copy(0.4f),
                 alwaysShowLabel = false,
                 selected = false,
-                modifier = Modifier.size(height = 100.dp, width = 300.dp),
                 onClick = {
                     /* Add code later */
                 }
@@ -293,7 +281,6 @@ fun BottomNavigationBar() {
 }
 @Composable
 fun ScaffoldLayout() {
-    val materialBlue700= Color(0xFF1976D2)
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
     Scaffold(
         scaffoldState = scaffoldState,
