@@ -56,7 +56,7 @@ fun SummaryStats() {
             Spacer(modifier = Modifier.weight(.5f))
             Card(elevation = 2.dp,
                 modifier = Modifier.weight(3f),
-
+                shape = RoundedCornerShape(16.dp)
             ) {
                 Row(
                     modifier = Modifier.padding(
@@ -72,7 +72,7 @@ fun SummaryStats() {
                         ) {
                         Text(
                             text = "996",
-                            style = MaterialTheme.typography.h4,
+                            style = MaterialTheme.typography.h3,
                         )
                         Text(
                             text = "Hours",
@@ -87,7 +87,7 @@ fun SummaryStats() {
                     ) {
                         Text(
                             text = "207",
-                            style = MaterialTheme.typography.h4,
+                            style = MaterialTheme.typography.h3,
                         )
                         Text(
                             text = "Books",
@@ -100,7 +100,7 @@ fun SummaryStats() {
                     ) {
                         Text(
                             text = "104",
-                            style = MaterialTheme.typography.h4,
+                            style = MaterialTheme.typography.h3,
                         )
                         Text(
                             text = "Authors",
@@ -252,6 +252,14 @@ fun BookList() {
                     }
                 }
             }
+            Divider(
+                modifier = Modifier.padding(
+                    start = 28.dp,
+                    end = 28.dp,
+                    top = 8.dp,
+                    bottom = 8.dp
+                )
+            )
         }
     }
 }
