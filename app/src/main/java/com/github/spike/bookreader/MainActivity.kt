@@ -5,15 +5,18 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.IntrinsicSize.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
@@ -188,7 +191,7 @@ fun SmartPicker() {
 fun BookList() {
     LazyColumn (modifier = Modifier
         .padding(top = 20.dp)
-        .fillMaxWidth()
+        .fillMaxWidth(),
     ) {
         item {
             Text(
@@ -197,7 +200,7 @@ fun BookList() {
                 modifier = Modifier.padding(
                     start = 30.dp,
                     top = 8.dp,
-                    bottom = 8.dp),
+                    bottom = 20.dp),
             )
         }
         items(20) { index ->
@@ -205,12 +208,14 @@ fun BookList() {
                 modifier = Modifier
                     .padding(
                         start = 16.dp,
-                        top = 8.dp,
-                        bottom = 8.dp
                     )
-                    .fillMaxWidth()) {
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+
+            ) {
                 Card(
-                    modifier = Modifier.size(80.dp),
+                    modifier = Modifier.height(80.dp)
+                        .padding(start = 8.dp),
                     shape = RectangleShape,
                     elevation = 0.dp
                 ) {
@@ -220,11 +225,12 @@ fun BookList() {
                     )
                 }
                 Column(modifier = Modifier.padding(
-                    start = 8.dp,
+                    start = 16.dp,
                     top = 4.dp,
-                    bottom = 4.dp,
-                    end = 20.dp
-                )) {
+                    bottom = 4.dp
+                ).weight(3f),
+                    horizontalAlignment = Alignment.Start
+                ) {
                     Text(text = "Ender's Game",
                         style = MaterialTheme.typography.h4
                     )
@@ -232,14 +238,22 @@ fun BookList() {
                         style = MaterialTheme.typography.body2
                     )
                 }
+                Spacer(
+                    modifier = Modifier.width(Max).weight(1f)
+                )
                 Column(modifier = Modifier.padding(
-                    start = 60.dp,
                     top = 4.dp,
                     bottom = 4.dp,
-                    end = 8.dp
-                )) {
-                    Text(text = "7%", fontFamily = FontFamily.Default)
-                    Spacer(modifier = Modifier.padding(top = 20.dp))
+                    end = 32.dp
+                ).weight(1f),
+                    horizontalAlignment = Alignment.End
+                ) {
+                    Text(text = "7%",
+                        fontFamily = FontFamily.Default)
+                    Spacer(
+                        modifier = Modifier
+                            .padding(top = 20.dp)
+                    )
                     Card(
                         modifier = Modifier.size(24.dp),
                         shape = CircleShape,
@@ -255,9 +269,9 @@ fun BookList() {
             Divider(
                 modifier = Modifier.padding(
                     start = 28.dp,
-                    end = 28.dp,
-                    top = 8.dp,
-                    bottom = 8.dp
+                    end = 32.dp,
+                    top = 16.dp,
+                    bottom = 16.dp
                 )
             )
         }
@@ -320,7 +334,7 @@ fun ScaffoldLayout() {
             //Text("BodyContent")
         },
         bottomBar = {
-            BottomNavigationBar()
+                BottomNavigationBar()
             // BottomAppBar(backgroundColor = materialBlue700) { Text("BottomAppBar")
         }
     )
@@ -344,6 +358,18 @@ fun CurrentReading() {
 @Composable
 fun DefaultPreview() {
     ReadingTheme {
-        ScaffoldLayout()
+        Box(
+            modifier = Modifier
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(
+                            Color.Red,
+                            Color.Blue
+                        )
+                    )
+                )
+        ) {
+            ScaffoldLayout()
+        }
     }
 }
