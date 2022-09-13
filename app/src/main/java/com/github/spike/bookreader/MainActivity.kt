@@ -186,6 +186,12 @@ fun SmartPicker() {
         }
     }
 }
+val covers = arrayOf(
+    Triple(R.drawable.enders_game_cover, "Ender's Game", "Orson Scott Card"),
+    Triple(R.drawable.dune_cover, "Dune", "Frank Herbert"),
+    Triple(R.drawable.harry_potter_one_cover, "Harry Potter and the Sorcerer's Stone", "J. K. Rowling")
+)
+val percentages = arrayOf(23, 78, 98)
 
 @Composable
 fun BookList() {
@@ -203,7 +209,7 @@ fun BookList() {
                     bottom = 20.dp),
             )
         }
-        items(20) { index ->
+        items(3) { index ->
             Row(
                 modifier = Modifier
                     .padding(
@@ -220,7 +226,7 @@ fun BookList() {
                     elevation = 0.dp
                 ) {
                     Image(
-                        painterResource(R.drawable.enders_game_cover),
+                        painterResource(covers[index].first),
                         contentDescription = "",
                     )
                 }
@@ -231,10 +237,10 @@ fun BookList() {
                 ).weight(3f),
                     horizontalAlignment = Alignment.Start
                 ) {
-                    Text(text = "Ender's Game",
+                    Text(text = covers[index].second,
                         style = MaterialTheme.typography.h4
                     )
-                    Text(text = "Orson Scott Card",
+                    Text(text = covers[index].third,
                         style = MaterialTheme.typography.body2
                     )
                 }
@@ -248,7 +254,7 @@ fun BookList() {
                 ).weight(1f),
                     horizontalAlignment = Alignment.End
                 ) {
-                    Text(text = "7%",
+                    Text(text = "${percentages[index]}%",
                         fontFamily = FontFamily.Default)
                     Spacer(
                         modifier = Modifier
@@ -331,11 +337,9 @@ fun ScaffoldLayout() {
             )},
         content = {
             CurrentReading()
-            //Text("BodyContent")
         },
         bottomBar = {
                 BottomNavigationBar()
-            // BottomAppBar(backgroundColor = materialBlue700) { Text("BottomAppBar")
         }
     )
 }
