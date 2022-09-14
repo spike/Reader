@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,6 +17,7 @@ import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
@@ -51,9 +53,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SummaryStats() {
         Row(
-            modifier = Modifier.padding(
-                top = 8.dp,
-            ).height(Min),
+            modifier = Modifier
+                .padding(
+                    top = 8.dp,
+                )
+                .height(Min),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Spacer(modifier = Modifier.weight(.5f))
@@ -62,10 +66,12 @@ fun SummaryStats() {
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Row(
-                    modifier = Modifier.padding(
-                        top = 20.dp,
-                        bottom = 20.dp
-                    ).height(Min),
+                    modifier = Modifier
+                        .padding(
+                            top = 20.dp,
+                            bottom = 20.dp
+                        )
+                        .height(Min),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Column(
@@ -191,7 +197,7 @@ val covers = arrayOf(
     Triple(R.drawable.dune_cover, "Dune", "Frank Herbert"),
     Triple(R.drawable.harry_potter_one_cover, "Harry Potter and the Sorcerer's Stone", "J. K. Rowling")
 )
-val percentages = arrayOf(23, 78, 98)
+val percentages = arrayOf(23, 78, 34)
 
 @Composable
 fun BookList() {
@@ -220,7 +226,8 @@ fun BookList() {
 
             ) {
                 Card(
-                    modifier = Modifier.height(80.dp)
+                    modifier = Modifier
+                        .height(80.dp)
                         .padding(start = 8.dp),
                     shape = RectangleShape,
                     elevation = 0.dp
@@ -230,11 +237,13 @@ fun BookList() {
                         contentDescription = "",
                     )
                 }
-                Column(modifier = Modifier.padding(
-                    start = 16.dp,
-                    top = 4.dp,
-                    bottom = 4.dp
-                ).weight(3f),
+                Column(modifier = Modifier
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        bottom = 4.dp
+                    )
+                    .weight(3f),
                     horizontalAlignment = Alignment.Start
                 ) {
                     Text(text = covers[index].second,
@@ -245,13 +254,17 @@ fun BookList() {
                     )
                 }
                 Spacer(
-                    modifier = Modifier.width(Max).weight(1f)
+                    modifier = Modifier
+                        .width(Max)
+                        .weight(.5f)
                 )
-                Column(modifier = Modifier.padding(
-                    top = 4.dp,
-                    bottom = 4.dp,
-                    end = 32.dp
-                ).weight(1f),
+                Column(modifier = Modifier
+                    .padding(
+                        top = 4.dp,
+                        bottom = 4.dp,
+                        end = 32.dp
+                    )
+                    .weight(1f),
                     horizontalAlignment = Alignment.End
                 ) {
                     Text(text = "${percentages[index]}%",
@@ -265,10 +278,7 @@ fun BookList() {
                         shape = CircleShape,
                         elevation = 0.dp
                     ) {
-                        Image(
-                            painterResource(R.drawable.indicator),
-                            contentDescription = "",
-                        )
+                        DrawArc(percentages[index])
                     }
                 }
             }
@@ -357,6 +367,24 @@ fun CurrentReading() {
     }
 }
 
+@Composable
+fun DrawArc(percentage: Int) {
+    val angle: Float = -(percentage * 360f) / 100f
+    Canvas(modifier = Modifier.size(24.dp)) {
+        drawCircle(
+            color = Color.Black,
+            center = center,
+            radius = 30.dp.toPx()
+        )
+        drawArc(
+            Color.White,
+            startAngle = -90f,
+            sweepAngle = angle,
+            useCenter = true,
+            size = Size(24.dp.toPx(), 24.dp.toPx()),
+        )
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
@@ -374,6 +402,7 @@ fun DefaultPreview() {
                 )
         ) {
             ScaffoldLayout()
+
         }
     }
 }
