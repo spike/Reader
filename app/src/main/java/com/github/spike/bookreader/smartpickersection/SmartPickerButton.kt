@@ -9,6 +9,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
+import com.github.spike.bookreader.topbar.TopBar
+import com.github.spike.bookreader.ui.theme.ReadingTheme
 import com.github.spike.bookreader.ui.theme.orange
 
 @Composable
@@ -28,5 +31,13 @@ fun SmartPickerButton(){
         Text(text="SMART PICKER",
             color = Color.White,
             style= MaterialTheme.typography.h5)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ButtonDisplay() {
+    ReadingTheme {
+        SmartPickerButton()
     }
 }
