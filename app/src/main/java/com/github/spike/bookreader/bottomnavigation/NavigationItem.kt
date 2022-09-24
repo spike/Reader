@@ -1,4 +1,6 @@
-package com.github.spike.bookreader
+package com.github.spike.bookreader.bottomnavigation
+
+import com.github.spike.bookreader.R
 
 sealed class NavigationItem(var route: String, var icon: Int, var title: String) {
     object Home : NavigationItem("home", R.drawable.ic_home, "Home")
