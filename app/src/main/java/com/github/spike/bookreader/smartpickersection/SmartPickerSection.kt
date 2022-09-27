@@ -19,11 +19,11 @@ fun SmartPickerSection() {
         .padding(start = 26.dp, top = 30.dp, bottom = 8.dp)
     ){
         Column() {
-            Text(text="Let our AI select a book",
+            Text(text="Let our AI select a new",
                 style= MaterialTheme.typography.body1)
-            Text(text="for you based on your",
+            Text(text="book for you based on",
                 style= MaterialTheme.typography.body1)
-            Text(text="interests.",
+            Text(text="your interests.",
                 style= MaterialTheme.typography.body1)
         }
         Column(modifier = Modifier.padding(
