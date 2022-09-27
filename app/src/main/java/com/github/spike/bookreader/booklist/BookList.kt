@@ -24,6 +24,7 @@ fun BookList() {
     LazyColumn (modifier = Modifier
         .padding(top = 20.dp)
         .fillMaxWidth(),
+        contentPadding= PaddingValues(bottom = 40.dp)
     ) {
         item {
             Text(
