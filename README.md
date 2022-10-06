@@ -1,7 +1,7 @@
 
 ### Description
 
-This Android project is my first attempt at implementing a Driiible [mockup](https://dribbble.com/shots/18526342-Mobile-App-iOS-Android-UI) using [Jetpack Compose](https://developer.android.com/jetpack/compose). 
+This Android project was created with [Jetpack Compose](https://developer.android.com/jetpack/compose) and inspired by this Dribbble [mockup](https://dribbble.com/shots/18526342-Mobile-App-iOS-Android-UI) using . 
 
 <p align="center">
 <img src="https://github.com/spike/spike/blob/main/reading_app_screenshot_v1.png" width="230"  title="Reading App"/>
