@@ -12,6 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.spike.bookreader.R
+import com.github.spike.bookreader.ScaffoldLayout
 import com.github.spike.bookreader.topbar.TopBar
 import com.github.spike.bookreader.ui.theme.ReadingTheme
 
@@ -47,8 +48,8 @@ fun WelcomeBack() {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun DefaultWelcomePreview() {
     ReadingTheme {
-        WelcomeBack()
+       WelcomeBack()
     }
 }

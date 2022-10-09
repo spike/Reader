@@ -1,23 +1,19 @@
 package com.github.spike.bookreader
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.spike.bookreader.ui.theme.ReadingTheme
-import com.github.spike.bookreader.ui.theme.orange
 import com.github.spike.bookreader.banner.WelcomeBack
 import com.github.spike.bookreader.booklist.BookList
 import com.github.spike.bookreader.bottomnavigation.BottomNavigationBar
@@ -74,8 +70,14 @@ fun ScaffoldLayout() {
 
 @Composable
 fun ScreenContent() {
+    val colorBlue = Color(0xFFD8E6E4)
+    val colorWhite = Color.White
+
+    // Creating a Vertical Gradient Color
+    val gradientWhiteLightBlue = Brush.verticalGradient(0f to colorWhite, 1000f to colorBlue)
+
     Column (
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().background(gradientWhiteLightBlue),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         WelcomeBack()

@@ -25,7 +25,7 @@ fun SummaryStats() {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Spacer(modifier = Modifier.weight(.5f))
-            Card(elevation = 2.dp,
+            Card(elevation = 1.dp,
                 modifier = Modifier.weight(3f),
                 shape = RoundedCornerShape(16.dp)
             ) {
