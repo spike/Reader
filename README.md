@@ -4,7 +4,7 @@
 This Android project was created with [Jetpack Compose](https://developer.android.com/jetpack/compose) and was inspired by this Dribbble mockup [here](https://dribbble.com/shots/18526342-Mobile-App-iOS-Android-UI). 
 
 <p align="center">
-<img src="https://github.com/spike/spike/blob/main/reading_app_screenshot_v1.png" width="230"  title="Reading App"/>
+<img src="https://github.com/spike/spike/blob/main/bookreaderv3.png" width="230"  title="Reading App"/>
 </p>
 
 ### Details
