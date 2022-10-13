@@ -5,6 +5,7 @@ import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
@@ -15,7 +16,7 @@ import com.github.spike.bookreader.booklist.BookList
 import com.github.spike.bookreader.ui.theme.ReadingTheme
 
 @Composable
-fun BottomNavigationBar() {
+fun BottomNavigationBar(modifier: Modifier) {
     val items = listOf(
         NavigationItem.Home,
         NavigationItem.Search,
@@ -74,6 +75,6 @@ fun BottomNavigationBar() {
 @Composable
 fun DefaultPreview() {
     ReadingTheme {
-        BottomNavigationBar()
+        BottomNavigationBar(Modifier)
     }
 }

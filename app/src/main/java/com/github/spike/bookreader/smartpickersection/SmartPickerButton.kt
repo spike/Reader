@@ -7,6 +7,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -15,7 +16,7 @@ import com.github.spike.bookreader.ui.theme.ReadingTheme
 import com.github.spike.bookreader.ui.theme.orange
 
 @Composable
-fun SmartPickerButton(){
+fun SmartPickerButton(modifier: Modifier){
     val mContext = LocalContext.current
     Button(
         onClick = {
@@ -38,6 +39,6 @@ fun SmartPickerButton(){
 @Composable
 fun ButtonDisplay() {
     ReadingTheme {
-        SmartPickerButton()
+        SmartPickerButton(Modifier)
     }
 }

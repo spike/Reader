@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ScaffoldLayout()
+                    ScaffoldLayout(Modifier)
                 }
             }
         }
@@ -45,7 +45,7 @@ val covers = arrayOf(
 val percentages = arrayOf(23, 78, 34)
 
 @Composable
-fun ScaffoldLayout() {
+fun ScaffoldLayout(modifier: Modifier) {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
     Scaffold(
         scaffoldState = scaffoldState,
@@ -60,16 +60,16 @@ fun ScaffoldLayout() {
                 elevation = 0.dp
             )},
         content = {
-            ScreenContent()
+            ScreenContent(modifier)
         },
         bottomBar = {
-                BottomNavigationBar()
+                BottomNavigationBar(modifier)
         }
     )
 }
 
 @Composable
-fun ScreenContent() {
+fun ScreenContent(modifier: Modifier) {
     val colorBlue = Color(0xFFD8E6E4)
     val colorWhite = Color.White
 
@@ -77,13 +77,13 @@ fun ScreenContent() {
     val gradientWhiteLightBlue = Brush.verticalGradient(0f to colorWhite, 1000f to colorBlue)
 
     Column (
-        modifier = Modifier.fillMaxSize().background(gradientWhiteLightBlue),
+        modifier = modifier.fillMaxSize().background(gradientWhiteLightBlue),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        WelcomeBack()
-        SmartPickerSection()
-        SummaryStats()
-        BookList()
+        WelcomeBack(modifier)
+        SmartPickerSection(modifier)
+        SummaryStats(modifier)
+        BookList(modifier)
     }
 }
 
@@ -104,7 +104,7 @@ fun DefaultPreview() {
                     )
                 )
         ) {
-            ScaffoldLayout()
+            ScaffoldLayout(Modifier)
 
         }
     }

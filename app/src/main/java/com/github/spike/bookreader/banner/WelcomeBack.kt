@@ -17,17 +17,16 @@ import com.github.spike.bookreader.topbar.TopBar
 import com.github.spike.bookreader.ui.theme.ReadingTheme
 
 @Composable
-fun WelcomeBack() {
-    Row(modifier = Modifier
+fun WelcomeBack(modifier: Modifier) {
+    Row(modifier = modifier
         .fillMaxWidth()
         .padding(start = 26.dp, top = 30.dp)
     ){
         Column() {
             Card(
-            modifier = Modifier.size(60.dp),
+            modifier = modifier.size(60.dp),
             shape = CircleShape,
-            elevation = 0.dp,
-
+            elevation = 0.dp
         ) {
             Image(
                 painterResource(R.drawable.ai_generated_face3),
@@ -35,7 +34,7 @@ fun WelcomeBack() {
             )
         }
         }
-        Column(modifier = Modifier.padding(
+        Column(modifier = modifier.padding(
             start = 32.dp,
             bottom = 32.dp
         )) {
@@ -50,6 +49,6 @@ fun WelcomeBack() {
 @Composable
 fun DefaultWelcomePreview() {
     ReadingTheme {
-       WelcomeBack()
+       WelcomeBack(Modifier)
     }
 }

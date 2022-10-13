@@ -15,22 +15,22 @@ import com.github.spike.bookreader.booklist.BookList
 import com.github.spike.bookreader.ui.theme.ReadingTheme
 
 @Composable
-fun SummaryStats() {
+fun SummaryStats(modifier: Modifier) {
         Row(
-            modifier = Modifier
+            modifier = modifier
                 .padding(
                     top = 8.dp,
                 )
                 .height(IntrinsicSize.Min),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Spacer(modifier = Modifier.weight(.5f))
+            Spacer(modifier = modifier.weight(.5f))
             Card(elevation = 1.dp,
-                modifier = Modifier.weight(3f),
+                modifier = modifier.weight(3f),
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Row(
-                    modifier = Modifier
+                    modifier = modifier
                         .padding(
                             top = 20.dp,
                             bottom = 20.dp
@@ -39,7 +39,7 @@ fun SummaryStats() {
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Column(
-                        modifier = Modifier.weight(1f),
+                        modifier = modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
 
                         ) {
@@ -55,7 +55,7 @@ fun SummaryStats() {
                     }
 
                     Column(
-                        modifier = Modifier.weight(1f),
+                        modifier = modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
@@ -68,7 +68,7 @@ fun SummaryStats() {
                         )
                     }
                     Column(
-                        modifier = Modifier.weight(1f),
+                        modifier = modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
@@ -82,7 +82,7 @@ fun SummaryStats() {
                     }
                 }
             }
-            Spacer(modifier = Modifier.weight(.5f))
+            Spacer(modifier = modifier.weight(.5f))
         }
     }
 
@@ -90,6 +90,6 @@ fun SummaryStats() {
 @Composable
 fun DefaultPreview() {
     ReadingTheme {
-        SummaryStats()
+        SummaryStats(Modifier)
     }
 }

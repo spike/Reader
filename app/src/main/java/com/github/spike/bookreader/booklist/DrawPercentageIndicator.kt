@@ -12,9 +12,9 @@ import com.github.spike.bookreader.bottomnavigation.BottomNavigationBar
 import com.github.spike.bookreader.ui.theme.ReadingTheme
 
 @Composable
-fun DrawPercentageIndicator(percentage: Int) {
+fun DrawPercentageIndicator(percentage: Int, modifier: Modifier) {
     val angle: Float = -(percentage * 360f) / 100f
-    Canvas(modifier = Modifier.size(24.dp)) {
+    Canvas(modifier = modifier.size(24.dp)) {
         drawCircle(
             color = Color.Black,
             center = center,
@@ -34,6 +34,6 @@ fun DrawPercentageIndicator(percentage: Int) {
 @Composable
 fun DefaultPreviewIndicator() {
     ReadingTheme {
-        DrawPercentageIndicator(percentage = 85)
+        DrawPercentageIndicator(percentage = 85, Modifier)
     }
 }

@@ -13,8 +13,8 @@ import androidx.compose.ui.unit.dp
 import com.github.spike.bookreader.ui.theme.ReadingTheme
 
 @Composable
-fun SmartPickerSection() {
-    Row(modifier = Modifier
+fun SmartPickerSection(modifier: Modifier) {
+    Row(modifier = modifier
         .fillMaxWidth()
         .padding(start = 26.dp, top = 30.dp, bottom = 8.dp)
     ){
@@ -26,11 +26,11 @@ fun SmartPickerSection() {
             Text(text="your interests.",
                 style= MaterialTheme.typography.body1)
         }
-        Column(modifier = Modifier.padding(
+        Column(modifier = modifier.padding(
             start = 16.dp,
             bottom = 16.dp
         )) {
-            SmartPickerButton()
+            SmartPickerButton(modifier)
         }
     }
 }
@@ -38,6 +38,6 @@ fun SmartPickerSection() {
 @Composable
 fun SmartPickerSectionDisplay() {
     ReadingTheme {
-        SmartPickerSection()
+        SmartPickerSection(Modifier)
     }
 }

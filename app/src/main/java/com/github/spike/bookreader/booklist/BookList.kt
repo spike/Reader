@@ -20,8 +20,8 @@ import com.github.spike.bookreader.*
 import com.github.spike.bookreader.ui.theme.ReadingTheme
 
 @Composable
-fun BookList() {
-    LazyColumn (modifier = Modifier
+fun BookList(modifier: Modifier) {
+    LazyColumn (modifier = modifier
         .padding(top = 20.dp)
         .fillMaxWidth(),
         contentPadding= PaddingValues(bottom = 40.dp)
@@ -30,7 +30,7 @@ fun BookList() {
             Text(
                 text = "Continue Reading",
                 style = MaterialTheme.typography.h5,
-                modifier = Modifier.padding(
+                modifier = modifier.padding(
                     start = 30.dp,
                     top = 8.dp,
                     bottom = 20.dp),
@@ -38,7 +38,7 @@ fun BookList() {
         }
         items(3) { index ->
             Row(
-                modifier = Modifier
+                modifier = modifier
                     .padding(
                         start = 16.dp,
                     )
@@ -47,7 +47,7 @@ fun BookList() {
 
             ) {
                 Card(
-                    modifier = Modifier
+                    modifier = modifier
                         .height(80.dp)
                         .padding(start = 8.dp),
                     shape = RectangleShape,
@@ -58,7 +58,7 @@ fun BookList() {
                         contentDescription = "",
                     )
                 }
-                Column(modifier = Modifier
+                Column(modifier = modifier
                     .padding(
                         start = 16.dp,
                         top = 4.dp,
@@ -75,11 +75,11 @@ fun BookList() {
                     )
                 }
                 Spacer(
-                    modifier = Modifier
+                    modifier = modifier
                         .width(IntrinsicSize.Max)
                         .weight(.5f)
                 )
-                Column(modifier = Modifier
+                Column(modifier = modifier
                     .padding(
                         top = 4.dp,
                         bottom = 4.dp,
@@ -91,20 +91,20 @@ fun BookList() {
                     Text(text = "${percentages[index]}%",
                         fontFamily = FontFamily.Default)
                     Spacer(
-                        modifier = Modifier
+                        modifier = modifier
                             .padding(top = 20.dp)
                     )
                     Card(
-                        modifier = Modifier.size(24.dp),
+                        modifier = modifier.size(24.dp),
                         shape = CircleShape,
                         elevation = 0.dp
                     ) {
-                        DrawPercentageIndicator(percentages[index])
+                        DrawPercentageIndicator(percentages[index], Modifier)
                     }
                 }
             }
             Divider(
-                modifier = Modifier.padding(
+                modifier = modifier.padding(
                     start = 28.dp,
                     end = 32.dp,
                     top = 16.dp,
@@ -119,6 +119,6 @@ fun BookList() {
 @Composable
 fun DefaultPreview() {
     ReadingTheme {
-        BookList()
+        BookList(Modifier)
     }
 }
